@@ -19,6 +19,7 @@ locations.forEach(location => {
         .bindPopup(`${location.name}<br>Population: ${location.population}`);
 });
 
+// Used Chatgpt to figure this fetching part. (Questions asked: How do I get information from my API. Where to find my apikey in openstreetmap.)
 // Fetch Air Quality Data (using a placeholder URL)... unsure why NO AQI information is being displayed.
 async function fetchAirQualityData() {
     const responses = await Promise.all(locations.map(location =>
@@ -28,6 +29,7 @@ async function fetchAirQualityData() {
     return data;
 }
 
+// Used Chatgpt to figure this ploting part. (Questions asked: How do I get Plotly to plot my data.)
 // Plot data
 async function plotData() {
     const airQualityData = await fetchAirQualityData();
